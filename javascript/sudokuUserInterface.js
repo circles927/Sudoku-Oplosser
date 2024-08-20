@@ -324,6 +324,12 @@ function cellLocator(mode, coördinates) {
             default:
                 return "error string location (switch)"
         }
+    } else if (mode == 3) {
+        // This must be based on locationColumn locationRow values, just like mode 1.
+
+        // For each position, it returns the selection of positions it all has to check. The entire row, the entire column. And the same square box. Multiplying the 1 - 9 numbers times 9 for the column positions. And then manually entering the box ones. That seems the most straightforward way. Partly hardcoding, partly smart.
+
+        console.log("not yet implemented (cellLocator)")
     } else {
         console.log("not possible (cellLocator)")
     }
