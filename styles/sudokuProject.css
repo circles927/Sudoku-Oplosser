@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    margin: 10px;
+    padding: 20px;
+
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+
+    background-color: burlywood;
+}
+
+.boxes {
+    width: 225px;
+    height: 225px;
+}
+
+#field {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    
+    display: grid;
+    align-content: auto;
+}
+
+.row {
+    width: 650px;
+
+    display: flex;
+    justify-content: left;
+}
+
+.rowInRow {
+    margin: 50px;
+}
+
+#controlPanel {
+    display: flex;
+    flex-direction: column;
+}
+
+#selectingCells {
+    display: flex;
+    flex-direction: column;
+    
+    width: 60px;
+    margin-left: 120px;
+    margin-top: 110px;
+}
+
+#buttonDiv {
+    width: 60px;
+    height: 40px;
+    padding: 10px;
+    margin-left: 110px;
+    margin-top: 10px;
+}
+
+#readButton {
+    width: 100%;
+}
+
+#runButton {
+    margin-top: 10px;
+    width: 100%;
+}
