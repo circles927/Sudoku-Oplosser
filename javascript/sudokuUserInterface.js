@@ -578,7 +578,6 @@ function startAlgo() {
             console.log("Arrays not yet on single value")
             continue
         } else if (sudokuField[`cell${x}`]["values"].length == 1) {
-            console.log(sudokuField[`cell${x}`]["values"][0] + " is the value")
             showValue(x);
             shownValue += 1;
             for (let a = 0; a < 81; a++) {
