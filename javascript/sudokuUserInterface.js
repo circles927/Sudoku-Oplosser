@@ -9,8 +9,169 @@ let sudokuField = {}
 function readButton() {
     // using global variable sudokuField
 
-    for (let x = 0; x < 81; x++){
-        sudokuField[`array${x + 1}`] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (let x = 0; x < 81; x++) {
+        if (x < 3) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 1;
+        }
+        if (x < 6 && x > 2) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 2;
+        }
+        if (x < 9 && x > 5) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 3;
+        }
+        if (x < 12 && x > 8) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 1;
+        }
+        if (x < 15 && x > 11) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 2;
+        }
+        if (x < 18 && x > 14) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 3;
+        }
+        if (x < 21 && x > 17) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 1;
+        }
+        if (x < 24 && x > 20) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 2;
+        }
+        if (x < 27 && x > 23) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 3; 
+        }
+        if (x < 30 && x > 26) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 4;
+        }
+        if (x < 33 && x > 29) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 5;
+        }
+        if (x < 36 && x > 32) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 6;
+        }
+        if (x < 39 && x > 35) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 4;
+        }
+        if (x < 42 && x > 38) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 5;
+        }
+        if (x < 45 && x > 41) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 6;
+        }
+        if (x < 48 && x > 44) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 4;
+        }
+        if (x < 51 && x > 47) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 5;
+        }
+        if (x < 54 && x > 50) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 6;
+        }
+        if (x < 57 && x > 53) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 7;
+        }
+        if (x < 60 && x > 56) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 8;
+        }
+        if (x < 63 && x > 59) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 9;
+        }
+        if (x < 66 && x > 62) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 7;
+        }
+        if (x < 69 && x > 65) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 8;
+        }
+        if (x < 72 && x > 68) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 9;
+        }
+        if (x < 75 && x > 71) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 7;
+        }
+        if (x < 78 && x > 74) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 8;
+        }
+        if (x < 81 && x > 77) {
+            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x + 1}`]["block"] = 9;
+        }
+        if (x < 9) {
+            sudokuField[`cell${x + 1}`]["row"] = 1;
+        }
+        if (x < 18 && x > 8) {
+            sudokuField[`cell${x + 1}`]["row"] = 2;
+        }
+        if (x < 27 && x > 17) {
+            sudokuField[`cell${x + 1}`]["row"] = 3;
+        }
+        if (x < 36 && x > 26) {
+            sudokuField[`cell${x + 1}`]["row"] = 4;
+        }
+        if (x < 45 && x > 35) {
+            sudokuField[`cell${x + 1}`]["row"] = 5;
+        }
+        if (x < 54 && x > 44) {
+            sudokuField[`cell${x + 1}`]["row"] = 6;
+        }
+        if (x < 63 && x > 53) {
+            sudokuField[`cell${x + 1}`]["row"] = 7;
+        }
+        if (x < 72 && x > 62) {
+            sudokuField[`cell${x + 1}`]["row"] = 8;
+        }
+        if (x < 81 && x > 71) {
+            sudokuField[`cell${x + 1}`]["row"] = 9;
+        }
+        if (x == 0 || x == 0 + 1 * 9 || x == 0 + 2 * 9 || x == 0 + 3 * 9 || x == 0 + 4 * 9 || x == 0 + 5 * 9 || x == 0 + 6 * 9 || x == 0 + 7 * 9 || x == 0 + 8 * 9) {
+            sudokuField[`cell${x + 1}`]["column"] = 1;
+        }
+        if (x == 1 || x == 1 + 1 * 9 || x == 1 + 2 * 9 || x == 1 + 3 * 9 || x == 1 + 4 * 9 || x == 1 + 5 * 9 || x == 1 + 6 * 9 || x == 1 + 7 * 9 || x == 1 + 8 * 9) {
+            sudokuField[`cell${x + 1}`]["column"] = 2;
+        }
+        if (x == 2 || x == 2 + 1 * 9 || x == 2 + 2 * 9 || x == 2 + 3 * 9 || x == 2 + 4 * 9 || x == 2 + 5 * 9 || x == 2 + 6 * 9 || x == 2 + 7 * 9 || x == 2 + 8 * 9) {
+            sudokuField[`cell${x + 1}`]["column"] = 3;
+        }
+        if (x == 3 || x == 3 + 1 * 9 || x == 3 + 2 * 9 || x == 3 + 3 * 9 || x == 3 + 4 * 9 || x == 3 + 5 * 9 || x == 3 + 6 * 9 || x == 3 + 7 * 9 || x == 3 + 8 * 9) {
+            sudokuField[`cell${x + 1}`]["column"] = 4;
+        }
+        if (x == 4 || x == 4 + 1 * 9 || x == 4 + 2 * 9 || x == 4 + 3 * 9 || x == 4 + 4 * 9 || x == 4 + 5 * 9 || x == 4 + 6 * 9 || x == 4 + 7 * 9 || x == 4 + 8 * 9) {
+            sudokuField[`cell${x + 1}`]["column"] = 5;
+        }
+        if (x == 5 || x == 5 + 1 * 9 || x == 5 + 2 * 9 || x == 5 + 3 * 9 || x == 5 + 4 * 9 || x == 5 + 5 * 9 || x == 5 + 6 * 9 || x == 5 + 7 * 9 || x == 5 + 8 * 9) {
+            sudokuField[`cell${x + 1}`]["column"] = 6;
+        }
+        if (x == 6 || x == 6 + 1 * 9 || x == 6 + 2 * 9 || x == 6 + 3 * 9 || x == 6 + 4 * 9 || x == 6 + 5 * 9 || x == 6 + 6 * 9 || x == 6 + 7 * 9 || x == 6 + 8 * 9) {
+            sudokuField[`cell${x + 1}`]["column"] = 7;
+        }
+        if (x == 7 || x == 7 + 1 * 9 || x == 7 + 2 * 9 || x == 7 + 3 * 9 || x == 7 + 4 * 9 || x == 7 + 5 * 9 || x == 7 + 6 * 9 || x == 7 + 7 * 9 || x == 7 + 8 * 9) {
+            sudokuField[`cell${x + 1}`]["column"] = 8;
+        }
+        if (x == 8 || x == 8 + 1 * 9 || x == 8 + 2 * 9 || x == 8 + 3 * 9 || x == 8 + 4 * 9 || x == 8 + 5 * 9 || x == 8 + 6 * 9 || x == 8 + 7 * 9 || x == 8 + 8 * 9) {
+            sudokuField[`cell${x + 1}`]["column"] = 9;
+        }
     }
 
     // console.log(sudokuField)
@@ -21,10 +182,10 @@ function readButton() {
     aElements.forEach((element) => {
         let intPosition = cellLocator(2, `${element.id}`)
         if (element.innerText != "0") {
-            sudokuField[`array${intPosition}`] = [element.innerText]
-            console.log(`array${intPosition} now reads ${element.innerText}`)
+            sudokuField[`cell${intPosition}`]["value"] = [parseInt(element.innerText)]
+            console.log(`cell${intPosition} now reads ${element.innerText}`)
         } else if (element.innerText == "0") {
-            sudokuField[`array${intPosition}`] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${intPosition}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
             // console.log(`array${intPosition} now reads a full array.`)
         } else {
             console.log("something went wrong reading sudoku into memory")
@@ -35,7 +196,20 @@ function readButton() {
 }
 
 function runButton() {
-    console.log("Calculating...")
+    // Ik moet nu met de run button aan de slag. Read is ook al uitgewerkt. Run is wat nou nog overblijft.
+
+    // Hij moet grofweg twee dingen doen. Al ingevulde cijfers afgaan en de overigen wegstrepen.
+    // En dan moet ie nog nagaan of in het veld al enkelen overgebleven zijn die ook aan het rijtje toegevoegd kunnen worden.
+
+    // Is dat niet een hele goede aanpak??
+
+    // Hij moet met de nummering werken. Per arraynummer. Als coördinaten.
+
+    while (startAlgo() != "exit") {
+        startAlgo()
+    }
+
+    console.log("Complete?")
 }
 
 function setValueCell() {
@@ -324,16 +498,57 @@ function cellLocator(mode, coördinates) {
             default:
                 return "error string location (switch)"
         }
-    } else if (mode == 3) {
-        // This must be based on locationColumn locationRow values, just like mode 1.
-
-        // For each position, it returns the selection of positions it all has to check. The entire row, the entire column. And the same square box. Multiplying the 1 - 9 numbers times 9 for the column positions. And then manually entering the box ones. That seems the most straightforward way. Partly hardcoding, partly smart.
-
-        console.log("not yet implemented (cellLocator)")
-    } else {
-        console.log("not possible (cellLocator)")
     }
+}
 
+function startAlgo() {
+    for (let x = 0; x < 81; x++) {
+        let shownValue = 0
+        if (sudokuField[`cell${x + 1}`]["value"].length > 1) {
+            continue
+        } else if (sudokuField[`cell${x + 1}`]["value"].length == 1) {
+            showValue(x + 1);
+            showValue += 1;
+            for (let a = 0; a < 81; a++) {
+                if (a == x) {
+                    continue
+                }
+                removeOtherValues(x + 1, a + 1);
+            }
+        } else {
+            console.log("Arrays of length < 1 present, apparently...");
+            break
+        }
+        if (shownValue == 81) {
+            return "exit"
+        }
+    }
+}
+
+function showValue(x) {
+    let rowNR = sudokuField[`cell${x}`]["row"];
+    let columnNR = sudokuField[`cell${x}`]["column"];
+
+    // Let op, column en row volgorde draait om vanaf nu.
+    let coördinatesARRAY = [columnNR, rowNR];
+    stringLocation = cellLocator(1, coördinatesARRAY);
+
+    let value = sudokuField[`cell${x}`]["value"];
+
+    let cellElement = document.getElementById(`${stringLocation}`);
+    cellElement.innerText = value; 
+}
+
+function removeOtherValues(x, a) {
+    if (sudokuField[`cell${x}`]["block"] == sudokuField[`cell${a}`]["block"]) {
+        sudokuField[`cell${a}`]["value"].splice(sudokuField[`cell${x}`]["value"][0])
+    }
+    if (sudokuField[`cell${x}`]["row"] == sudokuField[`cell${a}`]["row"]) {
+        sudokuField[`cell${a}`]["value"].splice(sudokuField[`cell${x}`]["value"][0])
+    }
+    if (sudokuField[`cell${x}`]["column"] == sudokuField[`cell${a}`]["column"]) {
+        sudokuField[`cell${a}`]["value"].splice(sudokuField[`cell${x}`]["value"][0])
+    }
 }
 
 // ------------------------
