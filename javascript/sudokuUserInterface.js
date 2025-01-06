@@ -233,14 +233,12 @@ function runButton() {
 
     // Hij moet met de nummering werken. Per arraynummer. Als coördinaten.
 
-    let exitCondition = "false"
-
-    do {
-        exitCondition = startAlgo()
-    } while (exitCondition != "exit")
-
-
-    console.log("Complete?")
+    let run = startAlgo();
+    if (run == "exit") {
+        console.log("Sudoku is solved")
+    } else {
+        console.log("Sudoku is not yet solved, maybe click once more?")
+    }
 }
 
 function setValueCell() {
@@ -552,20 +550,28 @@ function showValue(x) {
 }
 
 function removeOtherValues(x, a) {
+    let valueToBeSpliced = sudokuField[`cell${x}`]["values"][0];
+
     if (sudokuField[`cell${x}`]["block"] == sudokuField[`cell${a}`]["block"]) {
-        let valueToBeSpliced = sudokuField[`cell${x}`]["values"][0]
-        let spliced = sudokuField[`cell${a}`]["values"].splice(valueToBeSpliced)
-        console.log(spliced + "has been spliced")
+        let index = sudokuField[`cell${a}`]["values"].indexOf(valueToBeSpliced);
+        if (index > -1) {
+            let spliced = sudokuField[`cell${a}`]["values"].splice(index, 1);
+            console.log(spliced + " has been spliced");
+        }
     }
     if (sudokuField[`cell${x}`]["row"] == sudokuField[`cell${a}`]["row"]) {
-        let valueToBeSpliced = sudokuField[`cell${x}`]["values"][0]
-        let spliced = sudokuField[`cell${a}`]["values"].splice(valueToBeSpliced)
-        console.log(spliced + "has been spliced")
+        let index = sudokuField[`cell${a}`]["values"].indexOf(valueToBeSpliced);
+        if (index > -1) {
+            let spliced = sudokuField[`cell${a}`]["values"].splice(index, 1);
+            console.log(spliced + " has been spliced");
+        }
     }
     if (sudokuField[`cell${x}`]["column"] == sudokuField[`cell${a}`]["column"]) {
-        let valueToBeSpliced = sudokuField[`cell${x}`]["values"][0]
-        let spliced = sudokuField[`cell${a}`]["values"].splice(valueToBeSpliced)
-        console.log(spliced + "has been spliced")
+        let index = sudokuField[`cell${a}`]["values"].indexOf(valueToBeSpliced);
+        if (index > -1) {
+            let spliced = sudokuField[`cell${a}`]["values"].splice(index, 1);
+            console.log(spliced + " has been spliced");
+        }
     }
 }
 
