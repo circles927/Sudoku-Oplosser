@@ -555,17 +555,17 @@ function removeOtherValues(x, a) {
     if (sudokuField[`cell${x}`]["block"] == sudokuField[`cell${a}`]["block"]) {
         let valueToBeSpliced = sudokuField[`cell${x}`]["values"][0]
         let spliced = sudokuField[`cell${a}`]["values"].splice(valueToBeSpliced)
-        console.log(spliced)
+        console.log(spliced + "has been spliced")
     }
     if (sudokuField[`cell${x}`]["row"] == sudokuField[`cell${a}`]["row"]) {
         let valueToBeSpliced = sudokuField[`cell${x}`]["values"][0]
         let spliced = sudokuField[`cell${a}`]["values"].splice(valueToBeSpliced)
-        console.log(spliced)
+        console.log(spliced + "has been spliced")
     }
     if (sudokuField[`cell${x}`]["column"] == sudokuField[`cell${a}`]["column"]) {
         let valueToBeSpliced = sudokuField[`cell${x}`]["values"][0]
         let spliced = sudokuField[`cell${a}`]["values"].splice(valueToBeSpliced)
-        console.log(spliced)
+        console.log(spliced + "has been spliced")
     }
 }
 
