@@ -539,7 +539,7 @@ function showValue(x) {
 
     // Let op, column en row volgorde draait om vanaf nu.
     let coördinatesARRAY = [columnNR, rowNR];
-    stringLocation = cellLocator(1, coördinatesARRAY);
+    let stringLocation = cellLocator(1, coördinatesARRAY);
 
     let value = "N"
 
