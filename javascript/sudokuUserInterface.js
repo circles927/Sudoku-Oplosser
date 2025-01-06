@@ -9,168 +9,196 @@ let sudokuField = {}
 function readButton() {
     // using global variable sudokuField
 
+    // wacht... deze gaat vanaf 0 tot 80...
     for (let x = 0; x < 81; x++) {
         if (x < 3) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 1;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 1;
         }
         if (x < 6 && x > 2) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 2;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 2;
         }
         if (x < 9 && x > 5) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 3;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 3;
         }
         if (x < 12 && x > 8) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 1;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 1;
         }
         if (x < 15 && x > 11) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 2;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 2;
         }
         if (x < 18 && x > 14) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 3;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 3;
         }
         if (x < 21 && x > 17) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 1;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 1;
         }
         if (x < 24 && x > 20) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 2;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 2;
         }
         if (x < 27 && x > 23) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 3; 
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 3; 
         }
         if (x < 30 && x > 26) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 4;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 4;
         }
         if (x < 33 && x > 29) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 5;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 5;
         }
         if (x < 36 && x > 32) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 6;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 6;
         }
         if (x < 39 && x > 35) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 4;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 4;
         }
         if (x < 42 && x > 38) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 5;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 5;
         }
         if (x < 45 && x > 41) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 6;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 6;
         }
         if (x < 48 && x > 44) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 4;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 4;
         }
         if (x < 51 && x > 47) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 5;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 5;
         }
         if (x < 54 && x > 50) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 6;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 6;
         }
         if (x < 57 && x > 53) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 7;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 7;
         }
         if (x < 60 && x > 56) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 8;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 8;
         }
         if (x < 63 && x > 59) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 9;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 9;
         }
         if (x < 66 && x > 62) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 7;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 7;
         }
         if (x < 69 && x > 65) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 8;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 8;
         }
         if (x < 72 && x > 68) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 9;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 9;
         }
         if (x < 75 && x > 71) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 7;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 7;
         }
         if (x < 78 && x > 74) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 8;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 8;
         }
         if (x < 81 && x > 77) {
-            sudokuField[`cell${x + 1}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            sudokuField[`cell${x + 1}`]["block"] = 9;
+            sudokuField[`cell${x}`] = {}
+            sudokuField[`cell${x}`]["value"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            sudokuField[`cell${x}`]["block"] = 9;
         }
         if (x < 9) {
-            sudokuField[`cell${x + 1}`]["row"] = 1;
+            sudokuField[`cell${x}`]["row"] = 1;
         }
         if (x < 18 && x > 8) {
-            sudokuField[`cell${x + 1}`]["row"] = 2;
+            sudokuField[`cell${x}`]["row"] = 2;
         }
         if (x < 27 && x > 17) {
-            sudokuField[`cell${x + 1}`]["row"] = 3;
+            sudokuField[`cell${x}`]["row"] = 3;
         }
         if (x < 36 && x > 26) {
-            sudokuField[`cell${x + 1}`]["row"] = 4;
+            sudokuField[`cell${x}`]["row"] = 4;
         }
         if (x < 45 && x > 35) {
-            sudokuField[`cell${x + 1}`]["row"] = 5;
+            sudokuField[`cell${x}`]["row"] = 5;
         }
         if (x < 54 && x > 44) {
-            sudokuField[`cell${x + 1}`]["row"] = 6;
+            sudokuField[`cell${x}`]["row"] = 6;
         }
         if (x < 63 && x > 53) {
-            sudokuField[`cell${x + 1}`]["row"] = 7;
+            sudokuField[`cell${x}`]["row"] = 7;
         }
         if (x < 72 && x > 62) {
-            sudokuField[`cell${x + 1}`]["row"] = 8;
+            sudokuField[`cell${x}`]["row"] = 8;
         }
         if (x < 81 && x > 71) {
-            sudokuField[`cell${x + 1}`]["row"] = 9;
+            sudokuField[`cell${x}`]["row"] = 9;
         }
         if (x == 0 || x == 0 + 1 * 9 || x == 0 + 2 * 9 || x == 0 + 3 * 9 || x == 0 + 4 * 9 || x == 0 + 5 * 9 || x == 0 + 6 * 9 || x == 0 + 7 * 9 || x == 0 + 8 * 9) {
-            sudokuField[`cell${x + 1}`]["column"] = 1;
+            sudokuField[`cell${x}`]["column"] = 1;
         }
         if (x == 1 || x == 1 + 1 * 9 || x == 1 + 2 * 9 || x == 1 + 3 * 9 || x == 1 + 4 * 9 || x == 1 + 5 * 9 || x == 1 + 6 * 9 || x == 1 + 7 * 9 || x == 1 + 8 * 9) {
-            sudokuField[`cell${x + 1}`]["column"] = 2;
+            sudokuField[`cell${x}`]["column"] = 2;
         }
         if (x == 2 || x == 2 + 1 * 9 || x == 2 + 2 * 9 || x == 2 + 3 * 9 || x == 2 + 4 * 9 || x == 2 + 5 * 9 || x == 2 + 6 * 9 || x == 2 + 7 * 9 || x == 2 + 8 * 9) {
-            sudokuField[`cell${x + 1}`]["column"] = 3;
+            sudokuField[`cell${x}`]["column"] = 3;
         }
         if (x == 3 || x == 3 + 1 * 9 || x == 3 + 2 * 9 || x == 3 + 3 * 9 || x == 3 + 4 * 9 || x == 3 + 5 * 9 || x == 3 + 6 * 9 || x == 3 + 7 * 9 || x == 3 + 8 * 9) {
-            sudokuField[`cell${x + 1}`]["column"] = 4;
+            sudokuField[`cell${x}`]["column"] = 4;
         }
         if (x == 4 || x == 4 + 1 * 9 || x == 4 + 2 * 9 || x == 4 + 3 * 9 || x == 4 + 4 * 9 || x == 4 + 5 * 9 || x == 4 + 6 * 9 || x == 4 + 7 * 9 || x == 4 + 8 * 9) {
-            sudokuField[`cell${x + 1}`]["column"] = 5;
+            sudokuField[`cell${x}`]["column"] = 5;
         }
         if (x == 5 || x == 5 + 1 * 9 || x == 5 + 2 * 9 || x == 5 + 3 * 9 || x == 5 + 4 * 9 || x == 5 + 5 * 9 || x == 5 + 6 * 9 || x == 5 + 7 * 9 || x == 5 + 8 * 9) {
-            sudokuField[`cell${x + 1}`]["column"] = 6;
+            sudokuField[`cell${x}`]["column"] = 6;
         }
         if (x == 6 || x == 6 + 1 * 9 || x == 6 + 2 * 9 || x == 6 + 3 * 9 || x == 6 + 4 * 9 || x == 6 + 5 * 9 || x == 6 + 6 * 9 || x == 6 + 7 * 9 || x == 6 + 8 * 9) {
-            sudokuField[`cell${x + 1}`]["column"] = 7;
+            sudokuField[`cell${x}`]["column"] = 7;
         }
         if (x == 7 || x == 7 + 1 * 9 || x == 7 + 2 * 9 || x == 7 + 3 * 9 || x == 7 + 4 * 9 || x == 7 + 5 * 9 || x == 7 + 6 * 9 || x == 7 + 7 * 9 || x == 7 + 8 * 9) {
-            sudokuField[`cell${x + 1}`]["column"] = 8;
+            sudokuField[`cell${x}`]["column"] = 8;
         }
         if (x == 8 || x == 8 + 1 * 9 || x == 8 + 2 * 9 || x == 8 + 3 * 9 || x == 8 + 4 * 9 || x == 8 + 5 * 9 || x == 8 + 6 * 9 || x == 8 + 7 * 9 || x == 8 + 8 * 9) {
-            sudokuField[`cell${x + 1}`]["column"] = 9;
+            sudokuField[`cell${x}`]["column"] = 9;
         }
     }
 
@@ -205,9 +233,12 @@ function runButton() {
 
     // Hij moet met de nummering werken. Per arraynummer. Als coördinaten.
 
-    while (startAlgo() != "exit") {
-        startAlgo()
-    }
+    let exitCondition = "false"
+
+    do {
+        exitCondition = startAlgo()
+    } while (exitCondition != "exit")
+
 
     console.log("Complete?")
 }
@@ -332,195 +363,172 @@ function cellLocator(mode, coördinates) {
         // console.log("only 1 mode currently (cellLocator)")
         let idPosition = coördinates
 
+        // deze gaat vanaf 1 tot 81...
         switch(idPosition) {
             case "LT_LT":
-                return 1
+                return 0
             case "LT_MT":
-                return 2
+                return 1
             case "LT_RT":
-                return 3
+                return 2
             case "MT_LT":
-                return 4
+                return 3
             case "MT_MT":
-                return 5
+                return 4
             case "MT_RT":
-                return 6
+                return 5
             case "RT_LT":
-                return 7
+                return 6
             case "RT_MT":
-                return 8
+                return 7
             case "RT_RT":
-                return 9
+                return 8
             case "LT_LM":
-                return 10
+                return 9
             case "LT_MM":
-                return 11
+                return 10
             case "LT_RM":
-                return 12
+                return 11
             case "MT_LM":
-                return 13
+                return 12
             case "MT_MM":
-                return 14
+                return 13
             case "MT_RM":
-                return 15
+                return 14
             case "RT_LM":
-                return 16
+                return 15
             case "RT_MM":
-                return 17
+                return 16
             case "RT_RM":
-                return 18
+                return 17
             case "LT_LB":
-                return 19
+                return 18
             case "LT_MB":
-                return 20
+                return 19
             case "LT_RB":
-                return 21
+                return 20
             case "MT_LB":
-                return 22
+                return 21
             case "MT_MB":
-                return 23
+                return 22
             case "MT_RB":
-                return 24
+                return 23
             case "RT_LB":
-                return 25
+                return 24
             case "RT_MB":
-                return 26
+                return 25
             case "RT_RB":
-                return 27
+                return 26
             case "LM_LT":
-                return 28
+                return 27
             case "LM_MT":
-                return 29
+                return 28
             case "LM_RT":
-                return 30
+                return 29
             case "MM_LT":
-                return 31
+                return 30
             case "MM_MT":
-                return 32
+                return 31
             case "MM_RT":
-                return 33
+                return 32
             case "RM_LT":
-                return 34
+                return 33
             case "RM_MT":
-                return 35
+                return 34
             case "RM_RT":
-                return 36
+                return 35
             case "LM_LM":
-                return 37
+                return 36
             case "LM_MM":
-                return 38
+                return 37
             case "LM_RM":
-                return 39
+                return 38
             case "MM_LM":
-                return 40
+                return 39
             case "MM_MM":
-                return 41
+                return 40
             case "MM_RM":
-                return 42
+                return 41
             case "RM_LM":
-                return 43
+                return 42
             case "RM_MM":
-                return 44
+                return 43
             case "RM_RM":
-                return 45
+                return 44
             case "LM_LB":
-                return 46
+                return 45
             case "LM_MB":
-                return 47
+                return 46
             case "LM_RB":
-                return 48
+                return 47
             case "MM_LB":
-                return 49
+                return 48
             case "MM_MB":
-                return 50
+                return 49
             case "MM_RB":
-                return 51
+                return 50
             case "RM_LB":
-                return 52
+                return 51
             case "RM_MB":
-                return 53
+                return 52
             case "RM_RB":
-                return 54
+                return 53
             case "LB_LT":
-                return 55
+                return 54
             case "LB_MT":
-                return 56
+                return 55
             case "LB_RT":
-                return 57
+                return 56
             case "MB_LT":
-                return 58
+                return 57
             case "MB_MT":
-                return 59
+                return 58
             case "MB_RT":
-                return 60
+                return 59
             case "RB_LT":
-                return 61
+                return 60
             case "RB_MT":
-                return 62
+                return 61
             case "RB_RT":
-                return 63
+                return 62
             case "LB_LM":
-                return 64
+                return 63
             case "LB_MM":
-                return 65
+                return 64
             case "LB_RM":
-                return 66
+                return 65
             case "MB_LM":
-                return 67
+                return 66
             case "MB_MM":
-                return 68
+                return 67
             case "MB_RM":
-                return 69
+                return 68
             case "RB_LM":
-                return 70
+                return 69
             case "RB_MM":
-                return 71
+                return 70
             case "RB_RM":
-                return 72
+                return 71
             case "LB_LB":
-                return 73
+                return 72
             case "LB_MB":
-                return 74
+                return 73
             case "LB_RB":
-                return 75
+                return 74
             case "MB_LB":
-                return 76
+                return 75
             case "MB_MB":
-                return 77
+                return 76
             case "MB_RB":
-                return 78
+                return 77
             case "RB_LB":
-                return 79
+                return 78
             case "RB_MB":
-                return 80
+                return 79
             case "RB_RB":
-                return 81
+                return 80
             default:
                 return "error string location (switch)"
-        }
-    }
-}
-
-function startAlgo() {
-    for (let x = 0; x < 81; x++) {
-        let shownValue = 0
-        if (sudokuField[`cell${x + 1}`]["value"].length > 1) {
-            continue
-        } else if (sudokuField[`cell${x + 1}`]["value"].length == 1) {
-            showValue(x + 1);
-            showValue += 1;
-            for (let a = 0; a < 81; a++) {
-                if (a == x) {
-                    continue
-                }
-                removeOtherValues(x + 1, a + 1);
-            }
-        } else {
-            console.log("Arrays of length < 1 present, apparently...");
-            break
-        }
-        if (shownValue == 81) {
-            return "exit"
         }
     }
 }
@@ -533,21 +541,57 @@ function showValue(x) {
     let coördinatesARRAY = [columnNR, rowNR];
     stringLocation = cellLocator(1, coördinatesARRAY);
 
-    let value = sudokuField[`cell${x}`]["value"];
+    let value = "N"
 
+    if (sudokuField[`cell${x}`]["value"].length == 1) {
+        value = sudokuField[`cell${x}`]["value"][0];
+    }
+    
     let cellElement = document.getElementById(`${stringLocation}`);
     cellElement.innerText = value; 
 }
 
 function removeOtherValues(x, a) {
     if (sudokuField[`cell${x}`]["block"] == sudokuField[`cell${a}`]["block"]) {
-        sudokuField[`cell${a}`]["value"].splice(sudokuField[`cell${x}`]["value"][0])
+        let valueToBeSpliced = sudokuField[`cell${x}`]["value"][0]
+        sudokuField[`cell${a}`]["value"].splice(valueToBeSpliced)
     }
     if (sudokuField[`cell${x}`]["row"] == sudokuField[`cell${a}`]["row"]) {
-        sudokuField[`cell${a}`]["value"].splice(sudokuField[`cell${x}`]["value"][0])
+        let valueToBeSpliced = sudokuField[`cell${x}`]["value"][0]
+        sudokuField[`cell${a}`]["value"].splice(valueToBeSpliced)
     }
     if (sudokuField[`cell${x}`]["column"] == sudokuField[`cell${a}`]["column"]) {
-        sudokuField[`cell${a}`]["value"].splice(sudokuField[`cell${x}`]["value"][0])
+        let valueToBeSpliced = sudokuField[`cell${x}`]["value"][0]
+        sudokuField[`cell${a}`]["value"].splice(valueToBeSpliced)
+    }
+}
+
+function startAlgo() {
+    let shownValue = 0
+
+    // En nu weer 1 tot 81...
+    for (let x = 0; x < 81; x++) {
+        if (sudokuField[`cell${x}`]["value"].length > 1) {
+            console.log("Arrays not yet on single value")
+            continue
+        } else if (sudokuField[`cell${x}`]["value"].length == 1) {
+            console.log(sudokuField[`cell${x}`]["value"][0] + " is the value")
+            showValue(x);
+            shownValue += 1;
+            for (let a = 0; a < 81; a++) {
+                if (a == x) {
+                    continue
+                }
+                removeOtherValues(x, a);
+            }
+        } else {
+            console.log("Arrays of length < 1 present, apparently...");
+            break
+        }
+    }
+
+    if (shownValue == 81) {
+        return "exit"
     }
 }
 
