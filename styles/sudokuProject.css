@@ -43,6 +43,8 @@ a {
 #controlPanel {
     display: flex;
     flex-direction: column;
+    margin-left: 75px;
+    margin-top: 100px;
 }
 
 #selectingCells {
@@ -50,15 +52,15 @@ a {
     flex-direction: column;
     
     width: 60px;
-    margin-left: 120px;
-    margin-top: 110px;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
 #buttonDiv {
     width: 60px;
     height: 40px;
     padding: 10px;
-    margin-left: 110px;
+    margin-left: 10px;
     margin-top: 10px;
 }
 

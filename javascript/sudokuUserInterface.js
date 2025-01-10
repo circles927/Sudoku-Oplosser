@@ -5,11 +5,7 @@ let sudokuField = {}
 
 //-----------------------
 // Main Functions
-
-function readButton() {
-    // using global variable sudokuField
-
-    // wacht... deze gaat vanaf 0 tot 80...
+function initializeField() {
     for (let x = 0; x < 81; x++) {
         if (x < 3) {
             sudokuField[`cell${x}`] = {}
@@ -201,6 +197,26 @@ function readButton() {
             sudokuField[`cell${x}`]["column"] = 9;
         }
     }
+
+    let field = document.getElementById('field')
+    let aElements = field.querySelectorAll('as')
+
+    aElements.forEach((element) => {
+        let intPosition = cellLocator(2, `${element.id}`)
+        element.addEventListener('click', (e) => {
+            rowEL = document.getElementById("row")
+            columnEL = document.getElementById("column")
+
+            rowEL.value = sudokuField[`cell${intPosition}`]["row"]
+            console.log(`select row ${sudokuField[`cell${intPosition}`]["row"]}`)
+            columnEL.value = sudokuField[`cell${intPosition}`]["column"]
+            console.log(`select column ${sudokuField[`cell${intPosition}`]["column"]}`)
+        })
+    })
+}
+
+function readButton() {
+    // using global variable sudokuField
 
     // console.log(sudokuField)
 
@@ -598,7 +614,7 @@ function startAlgo() {
         }
     }
 
-    if (shownValue == 80) {
+    if (shownValue == 81) {
         return "exit"
     }
 }
@@ -626,3 +642,5 @@ button3.addEventListener('click', (e) => {
     
     runButton();
 })
+
+initializeField();
