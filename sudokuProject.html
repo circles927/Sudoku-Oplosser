@@ -7,95 +7,103 @@
     <link href="styles/sudokuProject.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="field">
-        <h1>Sudoku Solver:</h1>
-        <div class="row">
-            <div class="boxes">
-                <div class="rowInRow"><a id="LT_LT">0</a><a id="LT_MT">0</a><a id="LT_RT">0</a></div>
-                <div class="rowInRow"><a id="LT_LM">0</a><a id="LT_MM">0</a><a id="LT_RM">0</a></div>
-                <div class="rowInRow"><a id="LT_LB">0</a><a id="LT_MB">0</a><a id="LT_RB">0</a></div>
+    <div id="floatLinkBack"><a href="index.html">Back to Page</a></div>
+    <div id="sudokuPanel">
+        <div id="field">
+            <h1>Sudoku Solver:</h1>
+            <div class="row">
+                <div class="boxes">
+                    <div class="rowInRow"><a id="LT_LT">0</a><a id="LT_MT">0</a><a id="LT_RT">0</a></div>
+                    <div class="rowInRow"><a id="LT_LM">0</a><a id="LT_MM">0</a><a id="LT_RM">0</a></div>
+                    <div class="rowInRow"><a id="LT_LB">0</a><a id="LT_MB">0</a><a id="LT_RB">0</a></div>
+                </div>
+                <div class="boxes">
+                    <div class="rowInRow"><a id="MT_LT">0</a><a id="MT_MT">0</a><a id="MT_RT">0</a></div>
+                    <div class="rowInRow"><a id="MT_LM">0</a><a id="MT_MM">0</a><a id="MT_RM">0</a></div>
+                    <div class="rowInRow"><a id="MT_LB">0</a><a id="MT_MB">0</a><a id="MT_RB">0</a></div>
+                </div>
+                <div class="boxes">
+                    <div class="rowInRow"><a id="RT_LT">0</a><a id="RT_MT">0</a><a id="RT_RT">0</a></div>
+                    <div class="rowInRow"><a id="RT_LM">0</a><a id="RT_MM">0</a><a id="RT_RM">0</a></div>
+                    <div class="rowInRow"><a id="RT_LB">0</a><a id="RT_MB">0</a><a id="RT_RB">0</a></div>
+                </div>
             </div>
-            <div class="boxes">
-                <div class="rowInRow"><a id="MT_LT">0</a><a id="MT_MT">0</a><a id="MT_RT">0</a></div>
-                <div class="rowInRow"><a id="MT_LM">0</a><a id="MT_MM">0</a><a id="MT_RM">0</a></div>
-                <div class="rowInRow"><a id="MT_LB">0</a><a id="MT_MB">0</a><a id="MT_RB">0</a></div>
+            <div class="row">
+                <div class="boxes">
+                    <div class="rowInRow"><a id="LM_LT">0</a><a id="LM_MT">0</a><a id="LM_RT">0</a></div>
+                    <div class="rowInRow"><a id="LM_LM">0</a><a id="LM_MM">0</a><a id="LM_RM">0</a></div>
+                    <div class="rowInRow"><a id="LM_LB">0</a><a id="LM_MB">0</a><a id="LM_RB">0</a></div>
+                </div>
+                <div class="boxes">
+                    <div class="rowInRow"><a id="MM_LT">0</a><a id="MM_MT">0</a><a id="MM_RT">0</a></div>
+                    <div class="rowInRow"><a id="MM_LM">0</a><a id="MM_MM">0</a><a id="MM_RM">0</a></div>
+                    <div class="rowInRow"><a id="MM_LB">0</a><a id="MM_MB">0</a><a id="MM_RB">0</a></div>
+                </div>
+                <div class="boxes">
+                    <div class="rowInRow"><a id="RM_LT">0</a><a id="RM_MT">0</a><a id="RM_RT">0</a></div>
+                    <div class="rowInRow"><a id="RM_LM">0</a><a id="RM_MM">0</a><a id="RM_RM">0</a></div>
+                    <div class="rowInRow"><a id="RM_LB">0</a><a id="RM_MB">0</a><a id="RM_RB">0</a></div>
+                </div>
             </div>
-            <div class="boxes">
-                <div class="rowInRow"><a id="RT_LT">0</a><a id="RT_MT">0</a><a id="RT_RT">0</a></div>
-                <div class="rowInRow"><a id="RT_LM">0</a><a id="RT_MM">0</a><a id="RT_RM">0</a></div>
-                <div class="rowInRow"><a id="RT_LB">0</a><a id="RT_MB">0</a><a id="RT_RB">0</a></div>
+            <div class="row">
+                <div class="boxes">
+                    <div class="rowInRow"><a id="LB_LT">0</a><a id="LB_MT">0</a><a id="LB_RT">0</a></div>
+                    <div class="rowInRow"><a id="LB_LM">0</a><a id="LB_MM">0</a><a id="LB_RM">0</a></div>
+                    <div class="rowInRow"><a id="LB_LB">0</a><a id="LB_MB">0</a><a id="LB_RB">0</a></div>
+                </div>
+                <div class="boxes">
+                    <div class="rowInRow"><a id="MB_LT">0</a><a id="MB_MT">0</a><a id="MB_RT">0</a></div>
+                    <div class="rowInRow"><a id="MB_LM">0</a><a id="MB_MM">0</a><a id="MB_RM">0</a></div>
+                    <div class="rowInRow"><a id="MB_LB">0</a><a id="MB_MB">0</a><a id="MB_RB">0</a></div>
+                </div>
+                <div class="boxes">
+                    <div class="rowInRow"><a id="RB_LT">0</a><a id="RB_MT">0</a><a id="RB_RT">0</a></div>
+                    <div class="rowInRow"><a id="RB_LM">0</a><a id="RB_MM">0</a><a id="RB_RM">0</a></div>
+                    <div class="rowInRow"><a id="RB_LB">0</a><a id="RB_MB">0</a><a id="RB_RB">0</a></div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="boxes">
-                <div class="rowInRow"><a id="LM_LT">0</a><a id="LM_MT">0</a><a id="LM_RT">0</a></div>
-                <div class="rowInRow"><a id="LM_LM">0</a><a id="LM_MM">0</a><a id="LM_RM">0</a></div>
-                <div class="rowInRow"><a id="LM_LB">0</a><a id="LM_MB">0</a><a id="LM_RB">0</a></div>
+        <div id="controlPanel">
+            <div id="selectingCells">
+                <label>Select column:</label>
+                <select id="column">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                <label>Select row:</label>
+                <select id="row">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                <label>-----------</label>
+                <label>Give value:</label>
+                <input id="cellAllocator" type="text"/>
+                <button id="cellAllButton">Set</button>
             </div>
-            <div class="boxes">
-                <div class="rowInRow"><a id="MM_LT">0</a><a id="MM_MT">0</a><a id="MM_RT">0</a></div>
-                <div class="rowInRow"><a id="MM_LM">0</a><a id="MM_MM">0</a><a id="MM_RM">0</a></div>
-                <div class="rowInRow"><a id="MM_LB">0</a><a id="MM_MB">0</a><a id="MM_RB">0</a></div>
-            </div>
-            <div class="boxes">
-                <div class="rowInRow"><a id="RM_LT">0</a><a id="RM_MT">0</a><a id="RM_RT">0</a></div>
-                <div class="rowInRow"><a id="RM_LM">0</a><a id="RM_MM">0</a><a id="RM_RM">0</a></div>
-                <div class="rowInRow"><a id="RM_LB">0</a><a id="RM_MB">0</a><a id="RM_RB">0</a></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="boxes">
-                <div class="rowInRow"><a id="LB_LT">0</a><a id="LB_MT">0</a><a id="LB_RT">0</a></div>
-                <div class="rowInRow"><a id="LB_LM">0</a><a id="LB_MM">0</a><a id="LB_RM">0</a></div>
-                <div class="rowInRow"><a id="LB_LB">0</a><a id="LB_MB">0</a><a id="LB_RB">0</a></div>
-            </div>
-            <div class="boxes">
-                <div class="rowInRow"><a id="MB_LT">0</a><a id="MB_MT">0</a><a id="MB_RT">0</a></div>
-                <div class="rowInRow"><a id="MB_LM">0</a><a id="MB_MM">0</a><a id="MB_RM">0</a></div>
-                <div class="rowInRow"><a id="MB_LB">0</a><a id="MB_MB">0</a><a id="MB_RB">0</a></div>
-            </div>
-            <div class="boxes">
-                <div class="rowInRow"><a id="RB_LT">0</a><a id="RB_MT">0</a><a id="RB_RT">0</a></div>
-                <div class="rowInRow"><a id="RB_LM">0</a><a id="RB_MM">0</a><a id="RB_RM">0</a></div>
-                <div class="rowInRow"><a id="RB_LB">0</a><a id="RB_MB">0</a><a id="RB_RB">0</a></div>
+            <div id="buttonDiv">
+                <button id="readButton">Read Sudoku</button>
+                <button id="runButton">Run</button>
             </div>
         </div>
     </div>
-    <div id="controlPanel">
-        <div id="selectingCells">
-            <label>Select column:</label>
-            <select id="column">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
-            <label>Select row:</label>
-            <select id="row">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-            </select>
-            <label>-----------</label>
-            <label>Give value:</label>
-            <input id="cellAllocator" type="text"/>
-            <button id="cellAllButton">Set</button>
-        </div>
-        <div id="buttonDiv">
-            <button id="readButton">Read Sudoku</button>
-            <button id="runButton">Run</button>
-        </div>
+    <div id="tekstStuk">
+        <p>De invoermethode is gewijzigd. Je kunt de cellen nu sneller selecter door op het cijfertje in de cel te klikken, je ziet dan de selectoren rechts wijzigen in de correcte waardes. Geef 'm een waarde en klik Set. Doe dit voor alle waardes.</p>
+        <p>Klik vervolgens op Read Sudoku als je klaar bent om hem in het geheugen te lezen. En klik dan op Run, een aantal keren. Hij werkt zich dan een weg door de Sudoku heen, en als er geen problemen zijn met de moeilijkheid bijvoorbeeld, dan zou ie alles in moeten vullen na genoeg klikken.</p>
+        <p>Probeer het uit!</p>
     </div>
     <script src="javascript/sudokuUserInterface.js"></script>
 </body>

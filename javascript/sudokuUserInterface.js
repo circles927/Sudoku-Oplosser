@@ -199,7 +199,7 @@ function initializeField() {
     }
 
     let field = document.getElementById('field')
-    let aElements = field.querySelectorAll('as')
+    let aElements = field.querySelectorAll('a')
 
     aElements.forEach((element) => {
         let intPosition = cellLocator(2, `${element.id}`)
