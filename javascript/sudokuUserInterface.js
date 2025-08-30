@@ -3,10 +3,22 @@
 
 let sudokuField = {}
 
-//-----------------------
-// Main Functions
+/* initializeField
+   - Builds the global `sudokuField` object with 81 cells: cell0 ... cell80.
+   - Each cell is an object with:
+     - values: array of possible digits (starts as 1..9)
+     - block: 1..9 identifying the 3x3 subgrid
+     - row: 1..9 row number
+     - column: 1..9 column number
+   - The function also wires click handlers for the UI cell <a> elements so clicking
+     a cell sets the row/column selectors in the UI.
+   - NOTE: The current implementation uses many if statements to assign block/row/column.
+     It is verbose but functionally maps linear index x (0..80) -> row/column/block.
+*/
 function initializeField() {
     for (let x = 0; x < 81; x++) {
+
+        
         if (x < 3) {
             sudokuField[`cell${x}`] = {}
             sudokuField[`cell${x}`]["values"] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -215,6 +227,14 @@ function initializeField() {
     })
 }
 
+/* readButton
+   - Reads the current UI (field <a> elements) into `sudokuField`.
+   - For each cell element it:
+     - converts id -> intPosition using cellLocator(mode 2)
+     - if innerText != "0": set sudokuField.cellN.values = [that number]  (preset)
+     - if innerText == "0": reset values to full possibilities [1..9]
+   - After calling readButton the solver works on the in-memory `sudokuField`.
+*/
 function readButton() {
     // using global variable sudokuField
 
@@ -239,6 +259,13 @@ function readButton() {
     console.log("Reading Succesful")
 }
 
+/* runButton
+   - Triggers the solving pass (startAlgo). startAlgo currently does a single elimination pass:
+     - For every cell that already has a single possible value, it removes that value from
+       all other cells in the same row, column and block.
+   - If all 81 cells become singletons, startAlgo returns "exit".
+   - Current design: repeated clicks call runButton/startAlgo again to iteratively reduce candidates.
+*/
 function runButton() {
     // Ik moet nu met de run button aan de slag. Read is ook al uitgewerkt. Run is wat nou nog overblijft.
 
@@ -257,6 +284,11 @@ function runButton() {
     }
 }
 
+/* setValueCell
+   - Helper to set a UI cell from the small "cellAllocator" input using the row/column selectors.
+   - Uses cellLocator(mode 1) to convert [column,row] -> UI id string like "LT_LT".
+   - Writes the input value into the cell's innerText (UI only) — then you must click Read to sync to memory.
+*/
 function setValueCell() {
 
     let inputValue = document.getElementById("cellAllocator").value
@@ -271,6 +303,16 @@ function setValueCell() {
     // refresh page...?
 }
 
+/* cellLocator
+   - Two-mode helper that converts between UI id strings and numeric positions.
+   - mode == 1: input [column, row] (numbers) -> returns UI id string used for DOM elements.
+     - IMPORTANT: The function expects 1-based column and row (1..9).
+     - It computes which 3x3 block region (Left/Middle/Right and Top/Mid/Bottom) and the
+       position inside that block, assembling e.g. "LT_LT" (LeftTop block, LeftTop cell).
+   - mode == 2: input id string (e.g. "LT_LT") -> returns numeric index 0..80 which matches
+     sudokuField.cellN numbering used throughout the code.
+   - This mapping is the bridge between the DOM and in-memory indices.
+*/
 function cellLocator(mode, coördinates) {
     if (mode == 1) {
         let locationColumn = coördinates[0]
@@ -547,6 +589,12 @@ function cellLocator(mode, coördinates) {
     }
 }
 
+/* showValue(x)
+   - Given in-memory cell index x (0..80), finds its row/column and converts to UI id
+     then writes the single value to the corresponding DOM cell.
+   - If cell has >1 possibilities it writes "N" (default).
+   - Use this to update the visible grid for known singletons.
+*/
 function showValue(x) {
     let rowNR = sudokuField[`cell${x}`]["row"];
     let columnNR = sudokuField[`cell${x}`]["column"];
@@ -565,6 +613,13 @@ function showValue(x) {
     cellElement.innerText = value; 
 }
 
+/* removeOtherValues(x, a)
+   - Core elimination step:
+     - When cell x is a singleton with a value v, this function removes value v from
+       sudokuField.cell{a}.values if cell a shares the same block, row or column.
+   - Implementation detail: it finds indexOf(v) and uses splice(index,1) to remove it.
+   - After removal a cell's values array may shrink to 1 (becoming a new singleton).
+*/
 function removeOtherValues(x, a) {
     let valueToBeSpliced = sudokuField[`cell${x}`]["values"][0];
 
@@ -591,6 +646,16 @@ function removeOtherValues(x, a) {
     }
 }
 
+/* startAlgo
+   - Performs one sweep over all cells (0..80):
+     - If a cell has a single possible value: call showValue(x) and remove that value from all peers.
+     - If a cell has more than one value: skip it in this pass.
+     - If any cell has zero possibilities it logs a message (inconsistent state).
+   - Counts how many singletons were shown in this pass. If all 81 are singletons returns "exit".
+   - NOTE: This is a single-pass constraint propagation. Many Sudoku puzzles require repeated
+     passes or more advanced techniques (naked pairs, hidden singles, backtracking) to solve.
+     Currently you must call Run multiple times (or change startAlgo to loop until stable).
+*/
 function startAlgo() {
     let shownValue = 0
 
