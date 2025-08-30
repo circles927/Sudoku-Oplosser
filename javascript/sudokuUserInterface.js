@@ -684,6 +684,134 @@ function startAlgo() {
     }
 }
 
+/* Backtracking solver
+   - cloneField(field) : deep-copy of sudokuField-like object
+   - getPeersIndices(i, field) : indices that share row/col/block with i
+   - propagate(field) : iterative elimination; returns false on contradiction
+   - findBestCell(field) : pick a cell with fewest candidates (>1)
+   - solveBacktrack(field) : recursive backtracking; returns solved field or null
+   - solveAndApply() : convenience to read UI, solve, and apply result to DOM
+*/
+function cloneField(orig) {
+    let copy = {};
+    for (let k = 0; k < 81; k++) {
+        let key = `cell${k}`;
+        copy[key] = {
+            values: orig[key]["values"].slice(),
+            row: orig[key]["row"],
+            column: orig[key]["column"],
+            block: orig[key]["block"]
+        };
+    }
+    return copy;
+}
+
+function getPeersIndices(i, field) {
+    let peers = [];
+    let bi = field[`cell${i}`]["block"];
+    let ri = field[`cell${i}`]["row"];
+    let ci = field[`cell${i}`]["column"];
+    for (let j = 0; j < 81; j++) {
+        if (j === i) continue;
+        if (field[`cell${j}`]["block"] === bi || field[`cell${j}`]["row"] === ri || field[`cell${j}`]["column"] === ci) {
+            peers.push(j);
+        }
+    }
+    return peers;
+}
+
+function propagate(field) {
+    // keep eliminating until stable. return false on contradiction.
+    let changed = true;
+    while (changed) {
+        changed = false;
+        for (let i = 0; i < 81; i++) {
+            let vals = field[`cell${i}`]["values"];
+            if (vals.length === 0) return false; // contradiction
+            if (vals.length === 1) {
+                let v = vals[0];
+                let peers = getPeersIndices(i, field);
+                for (let p of peers) {
+                    let idx = field[`cell${p}`]["values"].indexOf(v);
+                    if (idx > -1) {
+                        field[`cell${p}`]["values"].splice(idx, 1);
+                        changed = true;
+                        if (field[`cell${p}`]["values"].length === 0) return false;
+                    }
+                }
+            }
+        }
+    }
+    return true;
+}
+
+function allSingletons(field) {
+    for (let i = 0; i < 81; i++) {
+        if (field[`cell${i}`]["values"].length !== 1) return false;
+    }
+    return true;
+}
+
+function findBestCell(field) {
+    let best = -1;
+    let bestLen = 10;
+    for (let i = 0; i < 81; i++) {
+        let len = field[`cell${i}`]["values"].length;
+        if (len > 1 && len < bestLen) {
+            bestLen = len;
+            best = i;
+        }
+    }
+    return best;
+}
+
+function solveBacktrack(field) {
+    // propagate first
+    if (!propagate(field)) return null;
+    if (allSingletons(field)) return field;
+
+    let idx = findBestCell(field);
+    if (idx === -1) return null; // nothing to try but not solved -> fail
+
+    let candidates = field[`cell${idx}`]["values"].slice();
+    for (let v of candidates) {
+        let trial = cloneField(field);
+        trial[`cell${idx}`]["values"] = [v];
+        if (!propagate(trial)) continue;
+        let result = solveBacktrack(trial);
+        if (result !== null) return result;
+    }
+    return null;
+}
+
+function applySolutionToUI(solution) {
+    for (let i = 0; i < 81; i++) {
+        let rowNR = solution[`cell${i}`]["row"];
+        let columnNR = solution[`cell${i}`]["column"];
+        let coördinatesARRAY = [columnNR, rowNR];
+        let stringLocation = cellLocator(1, coördinatesARRAY);
+        let cellElement = document.getElementById(`${stringLocation}`);
+        if (solution[`cell${i}`]["values"].length === 1) {
+            cellElement.innerText = solution[`cell${i}`]["values"][0];
+        } else {
+            cellElement.innerText = "N";
+        }
+    }
+}
+
+/* Convenience: read UI into memory, run backtracking, apply solution if found */
+function solveAndApply() {
+    readButton(); // fill sudokuField from UI
+    let working = cloneField(sudokuField);
+    let solved = solveBacktrack(working);
+    if (solved) {
+        console.log("Solution found, applying to UI");
+        applySolutionToUI(solved);
+    } else {
+        console.log("No solution found (contradiction or unsolvable with current constraints)");
+    }
+}
+
 // ------------------------
 // Event Handlers
 
@@ -705,7 +833,8 @@ let button3 = document.getElementById("runButton");
 
 button3.addEventListener('click', (e) => {
     
-    runButton();
+    // runButton();
+    solveAndApply();
 })
 
 initializeField();
